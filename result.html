@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Suggestions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f4f7fa;
+      padding: 30px;
+    }
+    .card {
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .roadmap-step {
+      margin-bottom: 8px;
+      padding: 5px 10px;
+      background-color: #f0f0f5;
+      border-left: 4px solid #0d6efd;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="mb-4 text-center">🚀 Your Suggested Career Paths</h2>
+
+    {% for career in suggestions %}
+    <div class="card mb-4">
+      <div class="card-body">
+        <h4 class="card-title">{{ career }}</h4>
+        <p class="text-muted">Roadmap:</p>
+        <div class="roadmap">
+          {% if career == 'Data Scientist' %}
+            <div class="roadmap-step">1. Learn Python, NumPy, and Pandas</div>
+            <div class="roadmap-step">2. Study statistics and data visualization</div>
+            <div class="roadmap-step">3. Master machine learning algorithms</div>
+            <div class="roadmap-step">4. Build real-world projects</div>
+            <div class="roadmap-step">5. Apply for internships or entry roles</div>
+          {% elif career == 'AI Engineer' or career == 'AI Developer' %}
+            <div class="roadmap-step">1. Learn AI fundamentals and Python</div>
+            <div class="roadmap-step">2. Work with TensorFlow or PyTorch</div>
+            <div class="roadmap-step">3. Build AI/ML apps or mini projects</div>
+            <div class="roadmap-step">4. Join research or industry projects</div>
+            <div class="roadmap-step">5. Target AI roles or higher studies</div>
+          {% elif career == 'Full Stack Developer' %}
+            <div class="roadmap-step">1. Learn HTML, CSS, JavaScript</div>
+            <div class="roadmap-step">2. Pick a backend tech (Node.js, Python Flask/Django)</div>
+            <div class="roadmap-step">3. Learn database (SQL/MongoDB)</div>
+            <div class="roadmap-step">4. Build full-stack apps</div>
+            <div class="roadmap-step">5. Deploy and publish portfolio</div>
+          {% else %}
+            <div class="roadmap-step">1. Learn relevant tech and tools</div>
+            <div class="roadmap-step">2. Practice with projects</div>
+            <div class="roadmap-step">3. Get certifications or training</div>
+            <div class="roadmap-step">4. Apply for internships</div>
+            <div class="roadmap-step">5. Join a company or startup</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="text-center">
+      <a href="/" class="btn btn-primary">🔙 Go Back</a>
+    </div>
+  </div>
+</body>
+</html>
+ 

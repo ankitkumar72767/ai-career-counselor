@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Career Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>AI Career Counselor</h1>
+    <form method="POST">
+        <label for="interests">Enter your interests:</label>
+        <input type="text" name="interests" id="interests" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
